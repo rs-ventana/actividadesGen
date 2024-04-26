@@ -14,20 +14,21 @@
 */
 
 
-function antipodal (arr) {
-    const arrMitad = Math.floor(arr.length/2); // floor redondeo hacia abajo
-    const primeraMitad = arr.slice(0, arrMitad);  // slice regresa los elementos seleccionados en un nuevo arreglo, sustraemos "y"
-    
-    
-    for 
-    const segundaMitad = arr.slice(-arrMitad);
-    const sumaOrden =primeraMitad.map((num, i)=> num (1/segundaMitad[i]));//map crea una nueva matriz 
-    const res = sumaOrden.map(num => num/2); // dividir 
-    return res;
+
+function antipodal(arr) {
+    if (arr.length % 2 !== 0) {
+        arr.splice(Math.floor(arr.length / 2), 1); // dividir y en su caso eliminar el impar
+    }
+
+    const resultadoArray = [];
+    const mitadArray = Math.floor(arr.length / 2); // Encontrar la mitad
+    for (let i = 0; i < mitadArray; i++) {
+        let sum = arr[i] + arr[arr.length - 1 - i]; // Sumar los números en el orden especificado
+        resultadoArray.push(sum / 2); // Dividir entre dos
+    }
+    return resultadoArray;
 }
 
-const arreglo = [1,2,3,5,22,6]
-const resFinal = antipodal(arr);
-console.log(resFinal);
-
+console.log(antipodal([1, 2, 3, 5, 22, 6, 8])); 
+// Resultado esperado: [ 4.5, 4, 12.5 ]
 
