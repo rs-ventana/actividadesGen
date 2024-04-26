@@ -19,4 +19,10 @@ function ofMultiples (num, len){
 
 let num = 19;
 let len = 11;
+let num2 = 3.14
+let len2 = 11;
 console.log(ofMultiples(num,len));
+// resultado: [19,  38,  57,  76, 95, 114, 133, 152, 171, 190]
+// son once numeros porque empieza en 1 
+console.log(ofMultiples(num2,len2));
+// [3.14, 6.28, 9.42, 12.56, 15.700000000000001, 18.84, 21.98, 25.12, 28.26, 31.400000000000002 ]

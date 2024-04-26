@@ -16,7 +16,7 @@
 
 
 function antipodal(arr) {
-    if (arr.length % 2 !== 0) {
+    if (arr.length % 2) {
         arr.splice(Math.floor(arr.length / 2), 1); // dividir y en su caso eliminar el impar
     }
 
@@ -30,5 +30,4 @@ function antipodal(arr) {
 }
 
 console.log(antipodal([1, 2, 3, 5, 22, 6, 8])); 
-// Resultado esperado: [ 4.5, 4, 12.5 ]
 
