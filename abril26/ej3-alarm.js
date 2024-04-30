@@ -14,11 +14,10 @@ function cantidadSeconds() { // preguntar
     return seconds;
 }
 
-function showText() { // mensaje
+function showText() { // mensaje final
     console.log("Es tiempo de ir a dormir");
 }
 
 let time = cantidadSeconds(); 
-console.log("Faltan:", time, "segundos para la alarma.");
-setTimeout(showText, time * 1000); // al usar setTimeoutMultiplicar se necesita milisegundos
-
+console.log("Faltan:", time, "segundos para la alarma."); // avisar el tiempo que falta
+setTimeout(showText, time * 1000); // para usar setTimeoutMultiplicar se necesita milisegundos
