@@ -25,4 +25,3 @@ usernameInput.addEventListener("input", (event) => {
 // target: donde sucede el evento
 
 // mandar a p para que el usuario lo vea
-

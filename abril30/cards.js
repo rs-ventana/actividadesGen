@@ -1,56 +1,78 @@
 /**
+ * Los pasos son los mismos:
  * {} crear tarjetas
- * {} secciones para tarjetas
- * {} img
- * nomb, des, age, lista de caja
- * insertar tarjeta
- * mostror en div.container
+ * {} crear seccones
+ * {} insertar en la tarjeta
+ * {} mostrar en div container
  */
-
-
-// aqui van las globales
 const CARDS_CONTAINER = document.querySelector("#card-container");
-
-const USER = {
+const USERS = [
+    {
     id: 1,
-    username: "user name",
-    desc: "sobre  mi",
-    age: 26,
+    username: "booklover123",
+    desc: "Avid reader and coffee enthusiast.",
+    age: 29,
     fav_books: {
         books: [
-            "canito",
-            "mac 2", 
-            "canito 3", 
-            "canito 4",
-            "canito 5",
+            "To Kill a Mockingbird", 
+            "1984", 
+            "Pride and Prejudice"
         ],
     },
-};
-
-
-
+},
+{
+    id: 2,
+    username: "literature_junkie",
+    desc: "Poetry lover and amateur writer.",
+    age: 35,
+    fav_books: {
+        books: ["The Great Gatsby", 
+        "Invisible Man", 
+        "Beloved"
+    ],
+    },
+},
+];
 
 // crear secciones
-const card = document.createElement("div");
-const name_section = document.createElement ("h3");
-const desc_section = document.createElement ("p");
-const age_section = document.createElement ("p");
-const book_section = document.createElement("div");
-// lista
-const booklist= USER.fav_books.books.map((e) =>{
-    const item = document.createElement("ul");
-    item.textContent = e;
-    return item;
+function userSection(){  // función para que se aplique a los users 
+    const cardObj ={     // desde la función es más sencillo crear las secciones
+        name_section: document.createElement ("h3"),
+        desc_section: document.createElement ("p"),
+        age_section: document.createElement ("p"),
+        book_section: document.createElement("div"),
+    };
+    return cardObj;
+}
+
+// crear tarjeta
+function injectData (obj, user){
+    const booklist= user.fav_books.books.map((e) =>{
+        const item = document.createElement("ul");
+        item.textContent = e;
+        return item;
+});
+obj.name_section.textContent = user.username;
+obj.desc_section.textContent = user.desc;
+obj.age_section.textContent = user.age;
+obj.book_section.append(...bookList);
+renderCard(obj);
+}
+
+// crear tarjeta vamos a usar el objeto,
+function renderCard(cardObj){
+    const card = document.createElement("div");
+    card.append (
+        cardObj.name_section,
+        cardObj.desc_section,
+        cardObj.age_section,
+        cardObj.book_section,
+    );
+    card.className = "div-creado";
+    CARDS_CONTAINER.appendChild(card);
+}
+USERS.forEach((user) => {
+    const cardData = userSection ();
+    injectData(carData, user);
 });
 
-console.log(booklist);
-
-// crear tarjeta vamos a usar el objeto
-name_section.textContent = USER.username;
-desc_section.textContent = USER.desc;
-age_section.textContent = USER.age;
-book_section.append(...booklist); // append permite varios nodos
-card.append(name_section, desc_section, age_section, book_section); 
-
-// inyectar en el container 
-CARDS_CONTAINER.appendChild(card); // inserta un nodo
