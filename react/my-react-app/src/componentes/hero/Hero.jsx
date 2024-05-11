@@ -4,9 +4,10 @@ import Typography from "@mui/material/Typography";
 function Hero() {
     return (
         <>
-        <Typography variant = "h1" gutterBottom> 
-        <h1>Welcome</h1>
-        <h2>Esta es la página de inicio</h2>
+        <Typography variant="h1" gutterBottom>
+            Welcome
+        <Typography variant="h2">
+            Esta es la página de inicio</Typography>
         </Typography>
         </>
     );
@@ -14,3 +15,5 @@ function Hero() {
 
 
 export default Hero;
+
+/* aca se muestra un mensaje de bienvenida, es la pag de inicio */

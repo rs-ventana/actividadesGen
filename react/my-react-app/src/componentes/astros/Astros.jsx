@@ -13,7 +13,7 @@ function Astro(props) {
         );
     }
  
-function Astros () { /* para que semuestre*/
+function Astros () { /* para que semuestre la info del astronauta actualizado*/
     const [astros, setAstros] = useState();
     const URL = "http://api.open-notify.org/astros.json";
 
@@ -29,7 +29,7 @@ console.log(astros); /* comprobar que si hay datos*/
 
 return (
     <>
-        <Typography variant="h2">Cartas Astros</Typography>
+        <Typography variant="h2">Cartas de astronautas en el espacio</Typography>
         <div className="card-container">
             {astros ? (
                 astros.map((astro, index) => 

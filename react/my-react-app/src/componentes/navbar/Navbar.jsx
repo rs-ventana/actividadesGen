@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-
+/* tiene dos propiedades: header navbar y links de navegación */
 function Navbar({ header, links }) {
     return (
     <nav>
@@ -9,10 +9,10 @@ function Navbar({ header, links }) {
             <h2>{header}</h2>
             </div>
             <div>
-                {links.map((link) => (
-                <Link className = "link" to={link.link} key={link.id}>
-                    {Link. text}
-                </Link>
+                {links.map((link) => ( /* permite que los enlaces se generen de forma dinamica */
+                <Link className = "link" to={link.link} key={link.id}>  
+                    {link. text}
+                </Link> /* aplicamos estilos */
             ))}
         </div>
     </nav>
