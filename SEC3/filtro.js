@@ -1,36 +1,3 @@
-Ana Ruiz = > 4
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="filtro.css">
-  <title>Filtros en JS</title>
-</head>
-
-<body>
-
-  <div>
-    <!-- añade clase y type  -->
-    <input type="text" placeholder="Seleccioná un color o tipo" class="input">
-      <button type="button">Filtrar</button>
-      <h1>Lista de productos </h1>
-<!-- aqui es diferente -->
-      <ul id="lista-de-productos">
-      </ul>
-
-
-  </div>
-  <script src=" filtro.js"></script>
-</body>
-
-</html>
-
------ js
-
 // Tenemos un li de productos
 
 const productos = [
@@ -97,4 +64,4 @@ const filtrado = (productos = [], texto) => {
     item.tipo.toLowerCase().includes(textoMinus) || item.color.toLowerCase().includes(textoMinus)
   );
 }
-----------
+
