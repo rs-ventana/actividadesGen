@@ -1,0 +1,62 @@
+/* Ana Ruiz => 6/6.
+ * Tiene lo que se pidio */ 
+package com.actividadesMayo27;
+
+//importar las clases
+import java.util.HashMap;
+import java.util.Scanner;
+
+// cambiar a Codigo7 sin acento
+public class Codigo7 {
+	//agregar main
+	public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+    // agregar faltante
+
+    HashMap<String, String> capitales = new HashMap<>();
+    // cambiar entradas a string y el nombre
+    
+    capitales.put("Canadá", "Ottawa");
+    capitales.put("Estados Unidos", "Washington DC");
+    capitales.put("México", "Ciudad de México");
+    capitales.put("Belice", "Belmopán");
+    capitales.put("Costa Rica", "San José");
+    capitales.put("El Salvador", "San Salvador");
+    capitales.put("Guatemala", "Ciudad de Guatemala");
+    capitales.put("Honduras", "Tegucigalpa");
+    capitales.put("Nicaragua", "Managua");
+    capitales.put("Panamá", "Panamá");
+
+   // adecuar para la pregunta, pais
+    String pais = "";
+    do {
+      System.out.print("Escribe el nombre de un país y te diré su capital: ");
+      pais = sc.nextLine();
+      
+      if (!pais.equals("salir")) {
+    	  //usar key = identificador unico
+        if (capitales.containsKey(pais)) {
+        	viewCapitales(capitales, pais);
+        } else {
+        	addCapitales(sc, capitales, pais);
+        }
+      }
+      
+    } while (!pais.equals("salir"));
+    //confirmar salida
+    System.out.println("Saliste del sistema");
+  }
+	private static void viewCapitales(HashMap<String, String> capitales, String pais) {
+    System.out.println("La capital de " + pais + " es " + capitales.get(pais));
+    // aca usamos get = recuperar valor
+}
+	private static void addCapitales(Scanner sc, HashMap<String, String> capitales, String pais) {
+    System.out.print("No conozco la respuesta. ¿Cuál es la capital de " + pais + "?: ");
+    String capitalAdd = sc.nextLine();
+    // aqui usamos put para agregar uno nuevo
+    
+    capitales.put(pais, capitalAdd);
+    System.out.println("Gracias por enseñarme nuevas capitales");
+ }
+}
