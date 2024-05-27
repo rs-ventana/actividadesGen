@@ -1,0 +1,17 @@
+/* 
+ * Ana Ruiz => 6/6
+ * Pequeños cambios para la refactorizacion
+ * 
+ * */
+
+package com.actividadesMayo27;
+
+public class Codigo4 {
+    public static void main(String[] args) {
+    	
+// el objeto en la clase main
+        FizzBuzz fizzBuzz = new FizzBuzz();
+//
+        fizzBuzz.imprimir();
+    }
+}

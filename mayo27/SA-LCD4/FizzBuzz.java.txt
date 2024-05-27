@@ -1,0 +1,29 @@
+package com.actividadesMayo27;
+
+
+//clase FizzBuzz
+public class FizzBuzz {
+ // met imprimir
+ public void imprimir() {
+ 	// crear del 1 al 100
+     for (int i = 1; i <= 100; i++) { 
+     	
+     	// primero las condiciones compartidas
+         if (i % 3 == 0 && i % 5 == 0) {
+             System.out.println("FizzBuzz");
+
+             // multiplos de 3
+         } else if (i % 3 == 0) {
+             System.out.println("Fizz");
+             
+             // multiplo de 5
+         } else if (i % 5 == 0) {
+         	System.out.println("Buzz");
+             
+             // en el resto
+         } else {
+             System.out.println(i);
+         }
+     }
+ }
+}
